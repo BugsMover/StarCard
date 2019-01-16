@@ -1,0 +1,220 @@
+@charset "utf-8";/*编码格式*/
+
+*{margin: 0;padding: 0;}
+
+div{
+	height: 350px;
+	width: 33.3%;
+	float: left;/*div向右排列*/
+	overflow: hidden;/*溢出隐藏：超出盒子宽高外的隐藏*/
+	position: relative;/*相对布局*/
+}
+
+div img{
+	width: 100%;
+    transition: all 1s;
+    /*transform:all 1s;错误语句*/
+}
+div:hover img{
+	opacity: 0.5;/*透明度：1为不透明 0为透明*/
+	
+}
+/*以上是共同样式*/
+
+/*第一个盒子样式*/
+#box1 h1{
+   position: absolute;/*绝对布局*/
+   top: 50px;
+   left: 50px;
+   color: white;
+   	transition: all 2s;
+}
+#box1:hover h1{
+	transform: translateX(50px);
+}
+#box1:hover img{
+	transform: translateX(20px);
+}
+#box1 p{
+	position: absolute;
+	left: 100px;
+	background: blue;
+	width: 100px;
+	
+}
+#box1 .p1{
+	top: 120px;
+	transform: translateY(700px);
+}
+#box1 .p2{
+	top: 170px;
+	transform: translateY(700px);
+}
+#box1 .p3{
+	top: 220px;
+	transform: translateY(700px);
+}
+#box1:hover .p1{
+	transform: translateY(0);
+	transition: 2s;
+}
+#box1:hover .p2{
+	transform: translateY(0);
+	transition: 1.5s;
+}
+#box1:hover .p3{
+	transform: translateY(0);
+	transition: 1s;
+}
+/*************************************************************/
+#box2 h1{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	color: white;
+}
+#box2 p{
+	position: absolute;
+    left: 50px;
+    width: 100px;	
+    background: white;
+    transform: translateX(-500px);
+}
+#box2 .p1{
+	top: 120px;
+	transition: all 1s;
+}
+#box2 .p2{
+	top:170px;
+	transition: all 1.5s;
+}
+#box2 .p3{
+	top:220px;
+	transition: all 2.5s;
+}
+#box2:hover h1{
+	transform: translateX(10px);
+}
+#box2:hover img{
+	transform: translateX(-10px);
+}
+#box2:hover p{
+	transform: translateX(0);
+
+}
+/*************************************************************/
+#box3 h1{
+   position: absolute;/*绝对布局*/
+   top: 100px;
+   left: 50px;
+   color: white;
+   transform: translateY(-80px) ;
+   opacity: 0;
+   	transition: all 1s;
+}
+#box3:hover h1{
+	transform: translateY(0);
+	opacity: 1;
+}
+#box3 p{
+	position: absolute;/*绝对布局*/
+   top: 240px;
+   left: 50px;
+   opacity: 0;
+   	transition: all 1s;
+}
+#box3:hover p{
+	opacity: 1;
+	transform: translateY(-80px);
+	
+}
+/**************************************************/
+#box4 .div{
+	position:absolute;
+	top: 350px;
+	left: 0;
+	background: cornflowerblue;
+	width: 5000px;
+	height: 500px;
+}
+
+#box4:hover .div{
+	transform-origin: 0% 0%;
+	transform: rotate(-25deg);
+	opacity: 0.5;
+	transition: all 1s;
+}
+#box4 h1{
+	position: absolute;
+	color: white;
+	top:100px;
+	left: 50px;
+}
+#box4 p{
+	position: absolute;
+	top: 250px;
+	left: 70%;
+	transform: translateY(500px);
+	z-index: 99; /*层级：P标签保持在最上层 定位过后才有层级*/
+    transition: all 2s;
+}
+#box4:hover p{
+	transform: translateY(0);
+	
+}
+/************************************************************/
+#box5 h1{
+	position: absolute;
+	top: 100px;
+	left: 50px;
+	color: white;
+	transition: all 1s;
+}
+#box5:hover h1{
+	transform: translateX(20px);
+	
+}
+
+#box5 p{
+	position: absolute;
+	top: 70%;
+	left: 20%;
+	width: 75%;
+	opacity: 0;
+	transition: all 1s;
+}
+#box5:hover p{
+	transform: translateY(-100px);
+	opacity: 1;
+	
+}
+#box5 .div{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 400px;
+	height: 270px;
+	border:solid 3px; /*黑子 实线 */
+	color: black;
+	transform-origin: 10% 10%;
+	transform: rotate(0) translateY(-500px); /*transform：操作多个属性值前，要默认好多个属性*/
+	transition: all 2s;
+}
+
+#box5:hover .div{;
+	transform:rotate(360deg) translateY(0) ;/**/
+}
+
+/*音乐图标样式 动画*/
+#btn{
+	/*固定位置：根据可视区窗口定位*/
+	position: fixed;
+	right: 30px;
+	top: 50px;
+	width: 50px;
+	animation: rotate 2s linear infinite ;
+}
+@keyframes rotate{
+	from{transform: rotate(0deg);}
+	to{transform: rotate(360deg);}
+}
